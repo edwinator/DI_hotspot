@@ -1,0 +1,91 @@
+#waitText{
+	position: absolute;
+	left: 320px;
+	top: 20px;
+	font-family:Helvetica;
+	embed-fonts:true;
+	font-size:28px;
+	text-align:left;
+	color:#3B5998;
+	/*background:#FFFFFF;*/
+}
+
+
+#dancevideo_01{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+#screenshot{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	/*cursor: pointer;*/
+}
+
+#hotSpot{
+  position: absolute;
+  left: 320px;
+  top: 140px;
+  width: 180px;
+  height: 200px;  
+  cursor: pointer;
+/*  background:#666666;
+  opacity: 0.2;*/
+}
+
+#fadeDiv {
+  position: absolute;
+  left: 120px;
+  top: 60px;
+  font-family:Helvetica;
+  embed-fonts:true;
+  font-size:20px;
+  text-align:center;
+  color:#3B5998;
+  opacity: 0.1;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -ms-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+  transition: all 2s ease-in;
+}
+#fadeDiv:hover {
+  -webkit-opacity: 0.25;
+  -moz-opacity: 0.25;
+  opacity: 1;
+}
+
+#instructText {
+  position: absolute;
+  left: 120px;
+  top: 60px;
+  font-family:Helvetica;
+  embed-fonts:true;
+  font-size:20px;
+  text-align:center;
+  color:#3B5998;
+  opacity: 0;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -ms-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+  transition: all 2s ease-in;
+}
+#instructText.fadein {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+/*#testArea {
+  position: absolute;
+  left: 900px;
+  top: 60px;
+  font-family:Helvetica;
+  embed-fonts:true;
+  font-size:20px;
+  text-align:center;
+  color:#000000;
+}*/
