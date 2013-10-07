@@ -24,7 +24,7 @@
 	/*cursor: pointer;*/
 }
 
-#hotSpot{
+#hotspot{
   position: absolute;
   left: 320px;
   top: 140px;
@@ -35,7 +35,7 @@
   opacity: 0.2;*/
 }
 
-#fadeDiv {
+/*#fadeDiv {
   position: absolute;
   left: 120px;
   top: 60px;
@@ -55,9 +55,9 @@
   -webkit-opacity: 0.25;
   -moz-opacity: 0.25;
   opacity: 1;
-}
+}*/
 
-#instructText {
+#instructHotpot {
   position: absolute;
   left: 120px;
   top: 60px;
@@ -73,11 +73,163 @@
   -o-transition: all 2s ease-in;
   transition: all 2s ease-in;
 }
-#instructText.fadein {
+#instructHotpot.fadein {
   -webkit-opacity: 1;
   -moz-opacity: 1;
   opacity: 1;
 }
+
+#instructChapters {
+  position: absolute;
+  left: 160px;
+  top: 70px;
+  font-family:Helvetica;
+  embed-fonts:true;
+  font-size:20px;
+  text-align:center;
+  color:#3B5998;
+  opacity: 0;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -ms-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+  transition: all 2s ease-in;
+}
+#instructChapters.fadein {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+#instructPdf {
+  position: absolute;
+  left: 160px;
+  top: 70px;
+  font-family:Helvetica;
+  embed-fonts:true;
+  font-size:20px;
+  text-align:center;
+  color:#3B5998;
+  opacity: 0;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -ms-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+  transition: all 2s ease-in;
+}
+#instructPdf.fadein {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+#instructQuiz {
+  position: absolute;
+  left: 160px;
+  top: 70px;
+  font-family:Helvetica;
+  embed-fonts:true;
+  font-size:20px;
+  text-align:center;
+  color:#3B5998;
+  opacity: 0;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -ms-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+  transition: all 2s ease-in;
+}
+#instructQuiz.fadein {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+#pdfLink {
+  position: absolute;
+  left: 250px;
+  top: 360px;
+  font-family:Helvetica;
+  embed-fonts:true;
+  font-size:16px;
+  text-align:center;
+  color:#3B5998;
+  opacity: 0;
+  -webkit-transition: all 2s ease-in;
+  -moz-transition: all 2s ease-in;
+  -ms-transition: all 2s ease-in;
+  -o-transition: all 2s ease-in;
+  transition: all 2s ease-in;
+}
+#pdfLink.fadein {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+
+#menu {
+  display: none;
+  position: absolute;
+  left: 265px;
+  top: 460px;
+}
+
+.menu_div ul
+{
+  padding:0px;
+  margin:0px;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size:15px;
+  color:#000000;
+  list-style:none;
+  text-indent:15px;
+}
+.menu_div ul li
+{
+  background:#999999;
+  line-height:28px;
+  border-bottom:1px solid #FFFFFF;
+  text-decoration:none;
+  color:#000000;
+  display:block;
+  padding-right:15px;
+}
+.menu_div ul li:hover
+{
+  background:#CCCCCC;
+  padding-right:15px;
+  cursor: pointer;
+}
+
+
+
+/*.menu_div ul li
+{
+  background:#999999;
+  line-height:28px;
+  border-bottom:1px solid #FFFFFF;
+}
+.menu_div ul li a
+{
+  text-decoration:none;
+  color:#000000;
+  display:block;
+  padding-right:15px;
+}
+.menu_div ul li a:hover
+{
+  background:#CCCCCC;
+  padding-right:15px;
+}*/
+
+
+/*.menu_div ul li#active
+{
+  background:#d40203;
+}*/
+
+
 
 /*#testArea {
   position: absolute;
