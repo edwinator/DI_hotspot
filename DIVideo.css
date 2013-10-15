@@ -7,7 +7,6 @@
 	font-size:28px;
 	text-align:left;
 	color:#3B5998;
-	/*background:#FFFFFF;*/
 }
 
 
@@ -31,31 +30,8 @@
   width: 180px;
   height: 200px;  
   cursor: pointer;
-/*  background:#666666;
-  opacity: 0.2;*/
 }
 
-/*#fadeDiv {
-  position: absolute;
-  left: 120px;
-  top: 60px;
-  font-family:Helvetica;
-  embed-fonts:true;
-  font-size:20px;
-  text-align:center;
-  color:#3B5998;
-  opacity: 0.1;
-  -webkit-transition: all 2s ease-in;
-  -moz-transition: all 2s ease-in;
-  -ms-transition: all 2s ease-in;
-  -o-transition: all 2s ease-in;
-  transition: all 2s ease-in;
-}
-#fadeDiv:hover {
-  -webkit-opacity: 0.25;
-  -moz-opacity: 0.25;
-  opacity: 1;
-}*/
 
 #instructHotpot {
   position: absolute;
@@ -125,6 +101,7 @@
 
 #instructQuiz {
   position: absolute;
+  cursor: pointer;
   left: 160px;
   top: 70px;
   font-family:Helvetica;
@@ -133,11 +110,18 @@
   text-align:center;
   color:#3B5998;
   opacity: 0;
+  display: none;
   -webkit-transition: all 2s ease-in;
   -moz-transition: all 2s ease-in;
   -ms-transition: all 2s ease-in;
   -o-transition: all 2s ease-in;
   transition: all 2s ease-in;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #instructQuiz.fadein {
   -webkit-opacity: 1;
@@ -202,42 +186,28 @@
   cursor: pointer;
 }
 
-
-
-/*.menu_div ul li
-{
-  background:#999999;
-  line-height:28px;
-  border-bottom:1px solid #FFFFFF;
-}
-.menu_div ul li a
-{
-  text-decoration:none;
-  color:#000000;
-  display:block;
-  padding-right:15px;
-}
-.menu_div ul li a:hover
-{
-  background:#CCCCCC;
-  padding-right:15px;
-}*/
-
-
-/*.menu_div ul li#active
-{
-  background:#d40203;
-}*/
-
-
-
-/*#testArea {
+#quiz {
   position: absolute;
-  left: 900px;
-  top: 60px;
+  left: 560px;
+  top: 160px;
   font-family:Helvetica;
   embed-fonts:true;
-  font-size:20px;
-  text-align:center;
-  color:#000000;
-}*/
+  font-size:16px;
+  text-align:left;
+  color:#3B5998;
+  display: none;
+}
+
+input {
+    float: left;
+    margin-left: 20px;
+}
+
+label {
+    float: left;
+    margin-left: 10px;
+}
+
+label + input {
+    clear: both;
+}
