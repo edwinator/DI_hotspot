@@ -26,26 +26,30 @@
 </div>
 
 <div id="instructHotpot"> 
-		<p>The logo below is a video hot spot.<br>Roll over and then click the logo to interact with the video hot spot.</p>
+		<p>Chapter 1: Interactive Video Hot Spots<br>The logo below is a video hot spot.<br>Roll over and then click the logo to interact with the video hot spot.</p>
 </div>
 
 <div id="instructChapters"> 
-		<p>Click below to see how Interactive Video Chapters work.</p>
+		<p>Chapter 2: Interactive Video Chapters<br>Click the logo below to see how Interactive Video Chapters work.</p>
+</div>
+
+<div id="instructChoose"> 
+		<p>Choose a chapter below or<br>click the logo to close or open chapter shade.</p>
 </div>
 
 <div id="instructPdf"> 
-		<p>Click the link below to download a pdf, or click the logo<br>to advance to chapter 4 to see an Interactive Video Quiz.</p>
+		<p>Chapter 3: Interactive Video Links<br>Click the link below to download a pdf, or click the logo below<br>to advance to chapter 4 to see an Interactive Video Quiz.</p>
 </div>
 
 <div id="instructQuiz"> 
-		<p>Click here to launch an Interactive quiz or click the logo<br>to call up Chapter 1 again for Video Hot Spots.</p>
+		<p>Click this button to launch an interactive quiz or click the logo<br>to call up Chapter 1 again for Interactive Video Hot Spots.</p>
 </div>
 
 <div id="pdfLink"> 
-		<a href="http://directimages.com/white_papers/How_Video_and_Interactivity_Create_ROI.pdf">How Video and Interactivity Create ROI - PDF</a>
+		<a href="http://directimages.com/white_papers/How_Video_and_Interactivity_Create_ROI.pdf" target="_blank">How Video and Interactivity Create ROI - PDF</a>
 </div>
 
-<div id="quiz"> 
+<form id="quiz"> 
 	<p>1) You can create an interactive video?</p>
 	<!-- <input checked="checked" type="radio" name="user_level" id="rd1" value="1"/> -->
 	<input type="radio" name="group1" id="rd1_1" value="1"/>
@@ -63,20 +67,40 @@
 	<label for="rd1_4">create a quiz</label><br/>
 	<input type="radio" name="group2" id="rd1_5" value="5"/>
 	<label for="rd1_5">all of the above</label><br/>
-</div>
+	<input id="submitBtn" type="submit" value="Submit and advance to Chapter 1">
+</form>
 
 <div id="hotspot"></div>
+<!-- 
+<div id="f1_container">
+	<div id="f1_card" class="back face center'"> -->
+<!-- <div id="f1_container"> -->
+		<div id="menu" class="menu_div">
+		        <ul>
+		        <!-- <li id="active"><a href="#">Chapter 1: Interactive Video Hot Spots</a></li> -->
+		        <li id="chap1">Chapter 1: Interactive Video Hot Spots</li>
+		        <li id="chap2">Chapter 2: Interactive Video Chapters</li>
+		        <li id="chap3">Chapter 3: Interactive Video Links</li>
+		        <li id="chap4">Chapter 4: Interactive Video Quiz</li>
+		        </ul>
+		</div>
+<!-- </div> -->
+<!-- 	</div>
+</div> -->
 
-<div id="menu" class="menu_div">
-        <ul>
-        <!-- <li id="active"><a href="#">Chapter 1: Interactive Video Hot Spots</a></li> -->
-        <li id="chap1">Chapter 1: Interactive Video Hot Spots</li>
-        <li id="chap2">Chapter 2: Interactive Video Chapters</li>
-        <li id="chap3">Chapter 3: Interactive Video Links</li>
-        <li id="chap4">Chapter 4: Interactive Video Quiz</li>
-        </ul>
+<!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+	<div class="flipper">
+		<div class="front">
+			front content
+			<p>front content</p>
+		</div>
+		<div class="back"> -->
+			<!-- back content -->
+<!-- 			<p>back content</p>
+		</div>
+	</div>
 </div>
-
+ -->
 <!-- <div id="footnote"></div> -->
 	
 </body>

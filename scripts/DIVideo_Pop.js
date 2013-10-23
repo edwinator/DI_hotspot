@@ -1,8 +1,9 @@
-var CUEPOINTS = new Array(8.25, 14.25, 21.5, 29.25, 30.330);
+var CUEPOINTS = new Array(8.25, 14.25, 21.5, 22.6, 29.25, 30.330);
 var currState = "init";
 
 var popcorn;
 var popcornEventID;
+var popcornEventID2;
 var vidReady = 0;
 var vidTimer = setInterval(function(){isVidReady()}, 50);
 
@@ -17,6 +18,7 @@ document.addEventListener( "DOMContentLoaded", function() {
 	document.getElementById("chap3").addEventListener("click", chap3Clicked, false);
 	document.getElementById("chap4").addEventListener("click", chap4Clicked, false);
 	document.getElementById("instructQuiz").addEventListener("click", showQuiz, false);
+	document.getElementById("submitBtn").addEventListener("click", chap1Clicked, false);
 
 	popcorn = Popcorn("#dancevideo_01");
 
@@ -44,6 +46,7 @@ function hotspotClicked(evt) {
 }
 
 function playCurrVideoSection() {
+	console.log("currState:"+currState);
 	if (currState == "init") {
 		console.log("init")
 		currState = "chapters";
@@ -62,8 +65,12 @@ function playCurrVideoSection() {
 		document.getElementById("instructChapters").style.display = "none";
 		document.getElementById("instructChapters").className = '';
 	    popcorn.currentTime(CUEPOINTS[2]);
-	    popcorn.cue(CUEPOINTS[3], function() {video4done()});
+	    // popcorn.cue(CUEPOINTS[4], function() {video4done()});
+	    // popcornEventID = popcorn.getLastTrackEventId();
+	    popcorn.cue(CUEPOINTS[3], function() {showChapterMenu()});
 	    popcornEventID = popcorn.getLastTrackEventId();
+	    popcorn.cue(CUEPOINTS[4], function() {video4done()});
+	    popcornEventID2 = popcorn.getLastTrackEventId();
 	    popcorn.play();	
 	}else if (currState == "pdf") {
 		console.log("pdf")
@@ -83,34 +90,53 @@ function playCurrVideoSection() {
 	    popcorn.cue(CUEPOINTS[1], function() {video2done()});
 	    popcornEventID = popcorn.getLastTrackEventId();
 	    popcorn.play();	
+	}else if (currState == "chapters_menu") {
+		if (document.getElementById("menu").className == "menu_div") {
+			document.getElementById("menu").className = "menu_div show"
+		}else{
+			document.getElementById("menu").className = "menu_div"
+		}
+		document.getElementById("hotspot").style.display = "block";
 	}
 }
 
 function chap1Clicked(evt) {
 	// console.log("chap1Clicked")
 	currState = "init";
-	document.getElementById("menu").style.display = "none";
+	// document.getElementById("menu").style.display = "none";
+	document.getElementById("menu").className = 'menu_div';
+	document.getElementById("instructChoose").style.display = "none";
+	document.getElementById("instructChoose").className = '';
 	playCurrVideoSection();
 }
 
 function chap2Clicked(evt) {
 	// console.log("chap2Clicked")
 	currState = "chapters";
-	document.getElementById("menu").style.display = "none";
+	// document.getElementById("menu").style.display = "none";
+	document.getElementById("menu").className = 'menu_div';
+	document.getElementById("instructChoose").style.display = "none";
+	document.getElementById("instructChoose").className = '';
 	playCurrVideoSection();
 }
 
 function chap3Clicked(evt) {
 	// console.log("chap3Clicked")
 	currState = "pdf";
-	document.getElementById("menu").style.display = "none";
+	// document.getElementById("menu").style.display = "none";
+	document.getElementById("menu").className = 'menu_div';
+	document.getElementById("instructChoose").style.display = "none";
+	document.getElementById("instructChoose").className = '';
 	playCurrVideoSection();
 }
 
 function chap4Clicked(evt) {
 	// console.log("chap4Clicked")
 	currState = "quiz";
-	document.getElementById("menu").style.display = "none";
+	// document.getElementById("menu").style.display = "none";
+	document.getElementById("menu").className = 'menu_div';
+	document.getElementById("instructChoose").style.display = "none";
+	document.getElementById("instructChoose").className = '';
 	playCurrVideoSection();
 }
 
@@ -127,12 +153,28 @@ function video3done() {  // Chapter 1 HotSpots done
 	document.getElementById("hotspot").style.display = "block";
 }
 
+function showChapterMenu() { 
+	console.log("showChapterMenu")
+	popcorn.removeTrackEvent(popcornEventID);
+	// popcorn.pause();
+	// document.getElementById("hotspot").style.display = "block";
+	// document.getElementById("menu").style.display = "block";
+	document.getElementById("menu").className = 'menu_div show';
+ //    popcorn.cue(CUEPOINTS[4], function() {video4done()});
+ //    popcornEventID = popcorn.getLastTrackEventId();
+	// popcorn.play();
+	// console.log("showChapterMenu END")
+}
+
 function video4done() {  // Chapter 2 Chapters done
 	console.log("video4done")
 	popcorn.pause();
-	popcorn.removeTrackEvent(popcornEventID);
+	popcorn.removeTrackEvent(popcornEventID2);
 	document.getElementById("hotspot").style.display = "block";
-	document.getElementById("menu").style.display = "block";
+	document.getElementById("instructChoose").style.display = "block";
+	document.getElementById("instructChoose").className = 'fadein';
+	// document.getElementById("menu").style.display = "block";
+	// document.getElementById("menu").className = 'menu_div show';
 }
 
 function video1done() {  // Chapter 3 Links done
