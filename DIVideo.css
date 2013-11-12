@@ -22,16 +22,9 @@
   top: 155px;
   opacity: 0;
   -webkit-transition: all .2s ease-in;
-  -moz-transition: all .2s ease-in;
-  -ms-transition: all .2s ease-in;
-  -o-transition: all .2s ease-in;
   transition: all .2s ease-in;
 }
 #sheen.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  -ms-opacity: 1;
-  -o-opacity: 1;
   opacity: 1;
 }
 
@@ -64,14 +57,9 @@
   color:#096E34;
   opacity: 0;
   -webkit-transition: all 1s ease-in;
-  -moz-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 #instructHotpot.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
   opacity: 1;
 }
 
@@ -85,14 +73,9 @@
   background-color: #76B23C;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  -ms-transition: all 0.5s ease-in;
-  -o-transition: all 0.5s ease-in;
   transition: all 0.5s ease-in;
 }
 #title.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
   opacity: 1;
 }
 #title p {
@@ -109,7 +92,7 @@
 #instructChapters {
   position: absolute;
   left: 130px;
-  top: 44px;
+  top: 60px;
   font-family:Helvetica;
   /*embed-fonts:true;*/
   font-size:18px;
@@ -117,20 +100,15 @@
   color:#096E34;
   opacity: 0;
   -webkit-transition: all 1s ease-in;
-  -moz-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 #instructChapters.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
   opacity: 1;
 }
 
-/*#instructChoose {
+#instructChoose {
   position: absolute;
-  left: 140px;
+  left: 100px;
   top: 60px;
   font-family:Helvetica;
   embed-fonts:true;
@@ -139,21 +117,16 @@
   color:#096E34;
   opacity: 0;
   -webkit-transition: all 1s ease-in;
-  -moz-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 #instructChoose.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
   opacity: 1;
-}*/
+}
 
 #instructPdf {
   position: absolute;
   left: 40px;
-  top: 40px;
+  top: 50px;
   font-family:Helvetica;
   /*embed-fonts:true;*/
   font-size:18px;
@@ -161,44 +134,32 @@
   color:#096E34;
   opacity: 0;
   -webkit-transition: all 1s ease-in;
-  -moz-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 #instructPdf.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
   opacity: 1;
 }
 
 #instructQuiz {
   position: absolute;
-  cursor: pointer;
-  left: 160px;
-  top: 60px;
+  /*cursor: pointer;*/
+  left: 40px;
+  top: 50px;
   font-family:Helvetica;
   /*embed-fonts:true;*/
   font-size:18px;
   text-align:center;
   color:#096E34;
   opacity: 0;
-  display: none;
+  /*display: none;*/
   -webkit-transition: all 1s ease-in;
-  -moz-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
-  /*-webkit-touch-callout: none;*/
-  -webkit-user-select: none;
-  -khtml-user-select: none;
+/*  -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  -o-user-select: none;*/
+  /*user-select: none;*/
 }
 #instructQuiz.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
   opacity: 1;
 }
 
@@ -211,14 +172,9 @@
   background-color: #76B23C;
   opacity: 0;
   -webkit-transition: all 1s ease-in;
-  -moz-transition: all 1s ease-in;
-  -ms-transition: all 1s ease-in;
-  -o-transition: all 1s ease-in;
   transition: all 1s ease-in;
 }
 #pdfLink.fadein {
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
   opacity: 1;
 }
 #pdfLink a {
@@ -243,8 +199,31 @@
   position: absolute;
   left: 23px;
   top: 405px;
+  /*transition:all 1s ease-in-out;*/
+
   opacity: 0;
-  transition:all 1s ease-in-out;
+  /*-webkit-transform:rotateX(90deg);*/
+  /*transform:rotateX(90deg);*/
+
+  border-style: solid;
+  border-bottom-color:  #76B23C;
+  border-bottom-width: 8px;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+
+
+  min-height: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  -webkit-transition: min-height, max-height;
+  -webkit-transition-duration: 1s;
+  -webkit-transition-timing-function: ease-in-out;  
+  transition: min-height, max-height;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+
+
 /*
   -webkit-perspective: 100px;
   -moz-perspective: 100px;
@@ -258,11 +237,9 @@
   -o-perspective-origin: left top;
   perspective-origin: left top;*/
 
-  -webkit-transform:rotateX(90deg);
-  -moz-transform:rotateX(90deg);
+/*  -moz-transform:rotateX(90deg);
   -ms-transform:rotateX(90deg);
-  -o-transform:rotateX(90deg);
-  transform:rotateX(90deg);
+  -o-transform:rotateX(90deg);*/
 }
 
 /*.show {
@@ -315,41 +292,157 @@
   /*transform:rotateX(180deg);*/
 }
 
-#menu.show {
-  -webkit-transform:rotateX(0deg);
-  -moz-transform:rotateX(0deg);
+#menu.show {  
+/*  -moz-transform:rotateX(0deg);
   -ms-transform:rotateX(0deg);
-  -o-transform:rotateX(0deg);
-  transform:rotateX(0deg);
-  -webkit-opacity: 1;
-  -moz-opacity: 1;
-  -ms-opacity: 1;
-  -o-opacity: 1;
+  -o-transform:rotateX(0deg);*/
+/*  -webkit-transform:rotateX(0deg);
+  transform:rotateX(0deg);*/
   opacity: 1;
+  height: auto;
+  min-height: 0px;
+  max-height: 200px;
+}
+
+#title {
+  position: absolute;
+  /*left: 160px;*/
+  left: 0px;
+  top: 16px;
+  background-color: #76B23C;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
+#launchQuiz {
+  cursor: pointer;
+  width: 120px;
+  height: 33px;
+  /*border: 0px;*/
+  position: absolute;
+  left: 490px;
+  top: 75px;
+  background-color: #206C17;
+  text-align:center;
+  color:#FFFFFF;  
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+#launchQuiz.fadein {
+  opacity: 1;
+}
+#launchQuiz p {
+  font-family:Helvetica;
+  font-size:19px;
+  text-align: center;
+  color:#FFFFFF;
+  margin-top: 4px;
+}
+
+
+
+#title {
+  position: absolute;
+  /*left: 160px;*/
+  left: 0px;
+  top: 16px;
+  width: 490px;
+  height: 34px;
+  background-color: #76B23C;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+#title.fadein {
+  opacity: 1;
+}
+#title p {
+  font-family: Helvetica;
+  font-weight: bold;
+  /*embed-fonts:true;*/
+  font-size: 20px;
+  text-align: left;
+  color:#FFFFFF;
+  margin-left: 30px;  
+  margin-top: 4px;
 }
 
 #quiz {
   position: absolute;
-  left: 560px;
+  left: 365px;
   top: 160px;
+  width: 365px;
+  height: 320px;
+  background-color: #959595;
   font-family:Helvetica;
   /*embed-fonts:true;*/
-  font-size:16px;
+  font-size: 18px;
+  font-weight: bold;
   text-align:left;
-  color:#3B5998;
-  /*display: none;*/
+  color:#FFFFFF;
+
+  border-style: solid;
+  border-top-color:  #206C17;
+  border-top-width: 16px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  display: none;
 }
 
-input {
-    float: left;
-    margin-left: 20px;
+#quiz.li {
+  display: inline;
 }
 
-label {
-    float: left;
-    margin-left: 10px;
+#quiz p {
+  margin-left: 10px;
+  margin-bottom: 5px;
+  /*text-align:center;*/
 }
 
-label + input {
+/*li {
+    display: none;
+}*/
+#quiz span {
+  display: block;
+  margin-top: -29px;
+  margin-left: 52px;
+  margin-bottom: -20px;
+}
+
+#quiz input {
+  /*float: left;*/
+  margin-left: 30px;
+  margin-bottom: 14px;
+}
+
+#quiz button {
+  cursor: pointer;
+  width: 115px;
+  height: 33px;
+  border: 0px;
+  /*float: left;*/
+  /*  margin-left: 30px;
+  margin-bottom: 12px;*/
+
+  position: absolute;
+  left: 250px;
+  top: 320px;
+  background-color: #76B23C;
+  font-family:Helvetica;
+  /*embed-fonts:true;*/
+  font-size:19px;
+  text-align:center;
+  color:#FFFFFF;
+}
+
+/*#quiz label {*/
+    /*float: left;*/
+    /*position: absolute;*/
+    /*margin-left: 10px;*/
+/*}*/
+
+/*label + input {
     clear: both;
-}
+}*/

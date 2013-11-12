@@ -1,4 +1,4 @@
-var CUEPOINTS = new Array(8.25, 14.25, 21.5, 22.6, 29.25, 30.330);
+var CUEPOINTS = new Array(8.4, 14.3, 21.6, 22.6, 29.25, 30.330);
 var TITLES = new Array("Chapter 1: Interactive Video Hot Spots", "Chapter 2: Interactive Video Chapters", "Chapter 3: Interactive Video Links", "Chapter 4: Interactive Video Quiz");
 var currState = "init";
 
@@ -23,7 +23,7 @@ document.addEventListener( "DOMContentLoaded", function() {
 	document.getElementById("chap2").addEventListener("click", chap2Clicked, false);
 	document.getElementById("chap3").addEventListener("click", chap3Clicked, false);
 	document.getElementById("chap4").addEventListener("click", chap4Clicked, false);
-	document.getElementById("instructQuiz").addEventListener("click", showQuiz, false);
+	document.getElementById("launchQuiz").addEventListener("click", showQuiz, false);
 	document.getElementById("submitBtn").addEventListener("click", chap1Clicked, false);
 
 	popcorn = Popcorn("#dancevideo_01");
@@ -66,11 +66,9 @@ function playCurrVideoSection() {
 		console.log("init")
 		currState = "chapters";
 		document.getElementById("quiz").style.display = "none";
-		// document.getElementById("instructHotpot").style.display = "none";
 		document.getElementById("instructHotpot").className = '';
-		// document.getElementById("instructQuiz").style.display = "none";
 		document.getElementById("instructQuiz").className = '';
-		// document.getElementById("title").style.display = "none";
+		document.getElementById("launchQuiz").className = '';
 		document.getElementById("title").className = '';
 	    popcorn.currentTime(CUEPOINTS[1]);
 	    popcorn.cue(CUEPOINTS[2], function() {video3done()});
@@ -79,12 +77,9 @@ function playCurrVideoSection() {
 	}else if (currState == "chapters") {
 		console.log("chapters")
 		currState = "chapters_menu";
-		// document.getElementById("instructChapters").style.display = "none";
 		document.getElementById("instructChapters").className = '';
 		document.getElementById("title").className = '';
 	    popcorn.currentTime(CUEPOINTS[2]);
-	    // popcorn.cue(CUEPOINTS[4], function() {video4done()});
-	    // popcornEventID = popcorn.getLastTrackEventId();
 	    popcorn.cue(CUEPOINTS[3], function() {showChapterMenu()});
 	    popcornEventID = popcorn.getLastTrackEventId();
 	    popcorn.cue(CUEPOINTS[4], function() {video4done()});
@@ -100,9 +95,7 @@ function playCurrVideoSection() {
 	}else if (currState == "quiz") {
 		console.log("quiz")
 		currState = "init";
-		// document.getElementById("instructPdf").style.display = "none";
 		document.getElementById("instructPdf").className = '';
-		// document.getElementById("pdfLink").style.display = "none";
 		document.getElementById("pdfLink").className = '';
 		document.getElementById("title").className = '';
 	    popcorn.currentTime(CUEPOINTS[0]);
@@ -115,19 +108,16 @@ function playCurrVideoSection() {
 		}else{
 			document.getElementById("menu").className = "menu_div"
 		}
-		document.getElementById("hotspot").style.display = "block";
-		document.getElementById("sheen").style.display = "block";
+		document.getElementById("hotspot").style.display = 'block';
+		document.getElementById("sheen").style.display = 'block';
 	}
 }
 
 function chap1Clicked(evt) {
 	// console.log("chap1Clicked")
 	currState = "init";
-	// document.getElementById("menu").style.display = "none";
 	document.getElementById("menu").className = 'menu_div';
-	// document.getElementById("instructChoose").style.display = "none";
-	// document.getElementById("instructChoose").className = '';
-	// document.getElementById("title").style.display = "none";
+	document.getElementById("instructChoose").className = '';
 	document.getElementById("title").className = '';
 	playCurrVideoSection();
 }
@@ -135,11 +125,8 @@ function chap1Clicked(evt) {
 function chap2Clicked(evt) {
 	// console.log("chap2Clicked")
 	currState = "chapters";
-	// document.getElementById("menu").style.display = "none";
 	document.getElementById("menu").className = 'menu_div';
-	// document.getElementById("instructChoose").style.display = "none";
-	// document.getElementById("instructChoose").className = '';
-	// document.getElementById("title").style.display = "none";
+	document.getElementById("instructChoose").className = '';
 	document.getElementById("title").className = '';
 	playCurrVideoSection();
 }
@@ -147,11 +134,8 @@ function chap2Clicked(evt) {
 function chap3Clicked(evt) {
 	// console.log("chap3Clicked")
 	currState = "pdf";
-	// document.getElementById("menu").style.display = "none";
 	document.getElementById("menu").className = 'menu_div';
-	// document.getElementById("instructChoose").style.display = "none";
-	// document.getElementById("instructChoose").className = '';
-	// document.getElementById("title").style.display = "none";
+	document.getElementById("instructChoose").className = '';
 	document.getElementById("title").className = '';
 	playCurrVideoSection();
 }
@@ -159,87 +143,68 @@ function chap3Clicked(evt) {
 function chap4Clicked(evt) {
 	// console.log("chap4Clicked")
 	currState = "quiz";
-	// document.getElementById("menu").style.display = "none";
 	document.getElementById("menu").className = 'menu_div';
-	// document.getElementById("instructChoose").style.display = "none";
-	// document.getElementById("instructChoose").className = '';
+	document.getElementById("instructChoose").className = '';
 	document.getElementById("titleText").innerHTML = TITLES[1];
-	// document.getElementById("title").style.display = "block";
-	// document.getElementById("title").className = 'fadein';
-	// document.getElementById("title").style.display = "none";
 	document.getElementById("title").className = '';
 	playCurrVideoSection();
 }
 
-function showQuiz(evt) {
-	document.getElementById("quiz").style.display = "block";
+function showQuiz(evt) {	
+	document.getElementById("launchQuiz").className = '';
+	// document.getElementById("instructQuiz").className = '';
+	document.getElementById("quiz").style.display = 'block';
 }
 
 function video3done() {  // Chapter 1 HotSpots done
 	console.log("video3done")
 	popcorn.pause();
 	popcorn.removeTrackEvent(popcornEventID);
-	// document.getElementById("instructChapters").style.display = "block";
 	document.getElementById("instructChapters").className = 'fadein';
 	document.getElementById("titleText").innerHTML = TITLES[1];
 	document.getElementById("title").className = 'fadein';
-	document.getElementById("hotspot").style.display = "block";
-	document.getElementById("sheen").style.display = "block";
-	// document.getElementById("title").style.display = "none";
-	// document.getElementById("title").className = '';
+	document.getElementById("hotspot").style.display = 'block';
+	document.getElementById("sheen").style.display = 'block';
 }
 
 function showChapterMenu() { 
 	console.log("showChapterMenu")
 	popcorn.removeTrackEvent(popcornEventID);
 	// popcorn.pause();
-	// document.getElementById("hotspot").style.display = "block";
-	// document.getElementById("menu").style.display = "block";
 	document.getElementById("menu").className = 'menu_div show';
- //    popcorn.cue(CUEPOINTS[4], function() {video4done()});
- //    popcornEventID = popcorn.getLastTrackEventId();
-	// popcorn.play();
-	// console.log("showChapterMenu END")
 }
 
 function video4done() {  // Chapter 2 Chapters done
 	console.log("video4done")
 	popcorn.pause();
 	popcorn.removeTrackEvent(popcornEventID2);
-	document.getElementById("hotspot").style.display = "block";
-	document.getElementById("sheen").style.display = "block";
-	// document.getElementById("instructChoose").style.display = "block";
-	// document.getElementById("instructChoose").className = 'fadein';
+	document.getElementById("hotspot").style.display = 'block';
+	document.getElementById("sheen").style.display = 'block';
+	document.getElementById("instructChoose").className = 'fadein';
 	document.getElementById("titleText").innerHTML = TITLES[1];
 	document.getElementById("title").className = 'fadein';
-	// document.getElementById("menu").style.display = "block";
-	// document.getElementById("menu").className = 'menu_div show';
 }
 
 function video1done() {  // Chapter 3 Links done
 	console.log("video1done")
 	popcorn.pause();
 	popcorn.removeTrackEvent(popcornEventID);
-	// document.getElementById("instructPdf").style.display = "block";
 	document.getElementById("instructPdf").className = 'fadein';
 	document.getElementById("titleText").innerHTML = TITLES[2];
-	// document.getElementById("title").style.display = "block";
 	document.getElementById("title").className = 'fadein';
-	// document.getElementById("pdfLink").style.display = "block";
 	document.getElementById("pdfLink").className = 'fadein';
-	document.getElementById("hotspot").style.display = "block";
-	document.getElementById("sheen").style.display = "block";
+	document.getElementById("hotspot").style.display = 'block';
+	document.getElementById("sheen").style.display = 'block';
 }
 
 function video2done() {  // Chapter 4 Quiz done
 	console.log("video2done")
 	popcorn.pause();
 	popcorn.removeTrackEvent(popcornEventID);
-	// document.getElementById("instructQuiz").style.display = "block";
 	document.getElementById("instructQuiz").className = 'fadein';
+	document.getElementById("launchQuiz").className = 'fadein';
 	document.getElementById("titleText").innerHTML = TITLES[3];
-	// document.getElementById("title").style.display = "block";
 	document.getElementById("title").className = 'fadein';
-	document.getElementById("hotspot").style.display = "block";
-	document.getElementById("sheen").style.display = "block";
+	document.getElementById("hotspot").style.display = 'block';
+	document.getElementById("sheen").style.display = 'block';
 }

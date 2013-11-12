@@ -39,17 +39,20 @@
 		<p>Click the logo below to see how<br>Interactive Video Chapters work.</p>
 </div>
 
-<!-- <div id="instructChoose"> 
-		<p>Choose a chapter below or<br>click the logo to close or open chapter shade.</p>
-</div> -->
+<div id="instructChoose"> 
+		<p>Choose a chapter below or click the logo<br>to close or open chapter shade.</p>
+</div>
 
 <div id="instructPdf"> 
 		<p>Click the link below to download a pdf, or click the<br>logo below to advance to chapter 4 to see an<br>Interactive Video Quiz.</p>
 </div>
 
+<div id="launchQuiz"><p>QUIZ</p></div>
+
 <div id="instructQuiz"> 
-		<p>Click this button to launch an interactive quiz or click the logo<br>to call up Chapter 1 again for Interactive Video Hot Spots.</p>
+		<p>Click the QUIZ button to launch an interactive quiz or<br>click the logo to call up Chapter 1 again for Interactive<br>Video Hot Spots.</p>
 </div>
+
 
 <div id="pdfLink"> 
 		<a href="http://directimages.com/white_papers/How_Video_and_Interactivity_Create_ROI.pdf" target="_blank">How Video and Interactivity Create ROI</a>
@@ -59,22 +62,26 @@
 <form id="quiz"> 
 	<p>1) You can create an interactive video?</p>
 	<!-- <input checked="checked" type="radio" name="user_level" id="rd1" value="1"/> -->
-	<input type="radio" name="group1" id="rd1_1" value="1"/>
-	<label for="rd1_1">True</label><br/>
-	<input type="radio" name="group1" id="rd1_2" value="2"/>
-	<label for="rd1_2">False</label><br/>
+	<!-- <li style="list-style:none;"> -->
+	<li style="list-style:none;">
+		<input type="radio" name="group1" id="rd1_1" value="1"/>
+		<label for="rd1_1">True</label>
+		<input type="radio" name="group1" id="rd1_2" value="2"/>
+		<label for="rd1_2">False</label>
+	</li>
 	<p>2) With Interactive Video, you can:</p>
 	<input type="radio" name="group2" id="rd1_1" value="1"/>
-	<label for="rd1_1">create hot spots</label><br/>
+	<label for="rd2_1">create hot spots</label><br/>
 	<input type="radio" name="group2" id="rd1_2" value="2"/>
-	<label for="rd1_2">create interactive hyperlinks to branch to another movie or to download a file</label><br/>
+	<label for="rd2_2"><span>create interactive hyperlinks to<br>branch to another movie or to<br>download a file</span></label><br/>
 	<input type="radio" name="group2" id="rd1_3" value="3"/>
-	<label for="rd1_3">create chapters</label><br/>
+	<label for="rd2_3">create chapters</label><br/>
 	<input type="radio" name="group2" id="rd1_4" value="4"/>
-	<label for="rd1_4">create a quiz</label><br/>
+	<label for="rd2_4">create a quiz</label><br/>
 	<input type="radio" name="group2" id="rd1_5" value="5"/>
-	<label for="rd1_5">all of the above</label><br/>
-	<input id="submitBtn" type="submit" value="Submit and advance to Chapter 1">
+	<label for="rd2_5">all of the above</label><br/>
+	<button id="submitBtn" type="submit">SUBMIT</button>
+	<!-- <input id="submitBtn" type="submit" value="SUBMIT"> -->
 </form>
 
 
